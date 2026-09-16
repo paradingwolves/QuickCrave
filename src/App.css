@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Ensure TipTap bold elements render correctly */
+.prose b,
+.prose strong {
+  font-weight: 700;
+}
+
+/* Fix italic, underline, and strike-through tags if needed */
+.prose i, .prose em { font-style: italic; }
+.prose u { text-decoration: underline; }
+.prose s, .prose del, .prose strike { text-decoration: line-through; }
