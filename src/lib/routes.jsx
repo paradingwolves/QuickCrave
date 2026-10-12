@@ -8,7 +8,9 @@ import AddRecipe from "../components/recipes/AddRecipe";
 import ProtectedRoute from "../components/protected/ProtectedRoute";
 import Explore from "../components/recipes/Explore";
 import Recipe from "../components/recipes/Recipe";
-import MyRecipes from "../components/recipes/MyRecipes"; // Import your MyRecipes component
+import MyRecipes from "../components/recipes/MyRecipes"; 
+import AboutUs from "../components/about/AboutUs";
+import SavedRecipes from "../components/recipes/SavedRecipes";
 
 // Route Path Constants
 export const ROOT = "/";
@@ -17,8 +19,11 @@ export const EXPLORE = "/explore";
 export const LOGIN = "/login";
 export const REGISTER = "/register";
 export const ADD_RECIPE = "/add-recipe";
-export const MY_RECIPES = "/my-recipes"; // Constant for MyRecipes
+export const MY_RECIPES = "/my-recipes";                        
+export const SAVED_RECIPES = "/saved-recipes";                        
 export const RECIPE_DETAIL = "/recipes/:recipeId";
+export const ABOUT = "/about";
+
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +33,10 @@ export const router = createBrowserRouter([
   {
     path: HOME,
     element: <Home />,
+  },
+  {
+    path: ABOUT,
+    element: <AboutUs />,
   },
   {
     path: EXPLORE,
@@ -54,6 +63,14 @@ export const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <MyRecipes />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: SAVED_RECIPES,
+    element: (
+      <ProtectedRoute>
+        <SavedRecipes />
       </ProtectedRoute>
     ),
   },
