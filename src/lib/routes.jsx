@@ -11,6 +11,7 @@ import Recipe from "../components/recipes/Recipe";
 import MyRecipes from "../components/recipes/MyRecipes"; 
 import AboutUs from "../components/about/AboutUs";
 import SavedRecipes from "../components/recipes/SavedRecipes";
+import PageNotFound from "../components/404/PageNotFound";
 
 // Route Path Constants
 export const ROOT = "/";
@@ -80,7 +81,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Home />, // Fallback wildcard route
+    element: <PageNotFound />, // Fallback wildcard route
   },
 ]);
 
